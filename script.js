@@ -1,21 +1,8 @@
-function median(numbers) {
-            // median of [3, 5, 4, 4, 1, 1, 2, 3] = 3
-            var median = 0,
-                numsLen = numbers.length;
-            if (
-                numsLen % 2 === 0 // is even
-            ) {
-                // average of two middle numbers
-                median = (numbers[numsLen / 2 - 1] + numbers[numsLen / 2]) / 2;
-            } else { // is odd
-                // middle number only
-                median = numbers[(numsLen - 1) / 2];
-            }
-            result = median;
-            console.log(result);
-  return result;
-        }
-     
+const median = arr => {
+  const mid = Math.floor(arr.length / 2),
+    nums = [...arr].sort((a, b) => a - b);
+  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+};
 
-var res = median([3, 5, 4, 4, 1, 1, 2, 3]);
+var res = median([100, 89, 1, 2]);
 console.log(res);
